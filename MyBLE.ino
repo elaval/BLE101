@@ -40,20 +40,20 @@ BLECharacteristic pin5Char("AA05", BLERead | BLENotify,2);     // remote clients
 BLECharacteristic mychars[6] = {pin0Char, pin1Char, pin2Char, pin3Char, pin4Char, pin5Char };
 
 // create switch characteristic and allow remote device to read and write
-BLECharCharacteristic pinD0Char("DD00", BLERead | BLEWrite);
-BLECharCharacteristic pinD1Char("DD01", BLERead | BLEWrite);
-BLECharCharacteristic pinD2Char("DD02", BLERead | BLEWrite);
-BLECharCharacteristic pinD3Char("DD03", BLERead | BLEWrite);
-BLECharCharacteristic pinD4Char("DD04", BLERead | BLEWrite);
-BLECharCharacteristic pinD5Char("DD05", BLERead | BLEWrite);
-BLECharCharacteristic pinD6Char("DD06", BLERead | BLEWrite);
-BLECharCharacteristic pinD7Char("DD07", BLERead | BLEWrite);
-BLECharCharacteristic pinD8Char("DD08", BLERead | BLEWrite);
-BLECharCharacteristic pinD9Char("DD09", BLERead | BLEWrite);
-BLECharCharacteristic pinD10Char("DD10", BLERead | BLEWrite);
-BLECharCharacteristic pinD11Char("DD11", BLERead | BLEWrite);
-BLECharCharacteristic pinD12Char("DD12", BLERead | BLEWrite);
-BLECharCharacteristic pinD13Char("DD13", BLERead | BLEWrite);
+BLECharCharacteristic pinD0Char("DD00", BLERead | BLEWrite );
+BLECharCharacteristic pinD1Char("DD01", BLERead | BLEWrite );
+BLECharCharacteristic pinD2Char("DD02", BLERead | BLEWrite );
+BLECharCharacteristic pinD3Char("DD03", BLERead | BLEWrite );
+BLECharCharacteristic pinD4Char("DD04", BLERead | BLEWrite );
+BLECharCharacteristic pinD5Char("DD05", BLERead | BLEWrite );
+BLECharCharacteristic pinD6Char("DD06", BLERead | BLEWrite );
+BLECharCharacteristic pinD7Char("DD07", BLERead | BLEWrite );
+BLECharCharacteristic pinD8Char("DD08", BLERead | BLEWrite );
+BLECharCharacteristic pinD9Char("DD09", BLERead | BLEWrite );
+BLECharCharacteristic pinD10Char("DD10", BLERead | BLEWrite );
+BLECharCharacteristic pinD11Char("DD11", BLERead | BLEWrite );
+BLECharCharacteristic pinD12Char("DD12", BLERead | BLEWrite );
+BLECharCharacteristic pinD13Char("DD13", BLERead | BLEWrite );
 
 BLECharCharacteristic myDchars[14] = {pinD0Char,pinD1Char,pinD2Char,pinD3Char,pinD4Char,pinD5Char,pinD6Char,pinD7Char,pinD8Char,pinD9Char,pinD10Char,pinD11Char,pinD12Char,pinD13Char };
 
@@ -123,10 +123,10 @@ void setup() {
 
   // Configure digital ports
   for (int i=0; i <= 13; i++) {
-    
     blePeripheral.addAttribute(myDchars[i]);
     myDchars[i].setValue(0);
   } 
+  myDchars[13].setValue(1);
 
   myDchars[0].setEventHandler(BLEWritten, listener0);
   myDchars[1].setEventHandler(BLEWritten, listener1);
@@ -157,11 +157,16 @@ void loop() {
 
   // if a central is connected to peripheral:
   if (central) {
+    //blePeripheral.poll();
+    
     Serial.print("Connected to central: ");
     // print the central's MAC address:
     Serial.println(central.address());
     // turn on the LED to indicate the connection:
     digitalWrite(13, HIGH);
+    char highValue = HIGH;
+    myDchars[13].setValue(highValue);
+    haschangedDigital(13);
 
     // check the battery level every 200ms
     // as long as the central is still connected:
@@ -176,6 +181,16 @@ void loop() {
             sendAnalogValue(i);
           }
         } 
+
+        /*
+        for (int i=0; i <= 13; i++){
+          if (haschangedDigital(i)) {
+            Serial.print("Changed digital: ");
+            Serial.println(i);
+            sendDigitalValue(i);
+          }
+        } 
+        */
 
 
       }
@@ -211,6 +226,35 @@ bool haschangedAnalog(int pinNum) {
     }
 
 }
+
+
+void sendDigitalValue(int pinNum) {
+  if (digitalRead(myDPins[pinNum]) == LOW) {
+    char lowValue = LOW;
+    myDchars[pinNum].setValue(lowValue);
+  } else {
+    char highValue = HIGH;
+    myDchars[pinNum].setValue(highValue);
+  }
+
+  
+    // and update the heart rate measurement characteristic
+}
+
+bool haschangedDigital(int pinNum) {
+  
+    char currentValue = digitalRead(myDPins[pinNum]);
+    char previousValue = oldDValues[pinNum];
+
+    if (currentValue != previousValue) {      
+      oldDValues[pinNum] = currentValue;
+      return true;
+    } else {
+      return false;
+    }
+
+}
+
 
 
 void listener0(BLECentral& central, BLECharacteristic& characteristic) {
@@ -285,3 +329,4 @@ void switchCharacteristicWritten(BLECentral& central, BLECharacteristic& charact
     digitalWrite(myDPins[pinNum], LOW);
   }
 }
+
