@@ -18,7 +18,12 @@ Arduino 101 looks very similar to arduino UNO, but it is a different boatrd and 
 
 1) You need Arduino IDE 1.6.7 (or later) - Downloadable from https://www.arduino.cc/en/Main/Software
 2) If you have it already installed, you must use the board 
-<img src="./images/arduino1.jpg" width="250">
-So, where do we start? First, plug your Arduino 101 board to your computer with a simple USB cable, then download Arduino IDE 1.6.7 https://www.arduino.cc/en/Main/Software and install the required board package with the board manager:
 
-So, where do we start? First, plug your Arduino 101 board to your computer with a simple USB cable, then download Arduino IDE 1.6.7 https://www.arduino.cc/en/Main/Software and install the required board package with the board manager:
+<img src="./images/arduino1.png" width="640">
+
+3) If not, you have to install it through Board Manager
+
+<img src="./images/arduino2.png" width="640">
+
+And select board Arduino/Genuino 101 (Intel Curie Boards by Intel)
+<img src="./images/arduino3.png" width="640">
