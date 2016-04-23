@@ -1,6 +1,4 @@
 /*
-   Copyright (c) 2015 Intel Corporation.  All rights reserved.
-
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Lesser General Public
    License as published by the Free Software Foundation; either
@@ -22,11 +20,16 @@
 /*
    This sketch example partially implements the standard Bluetooth Low-Energy Battery service.
    For more information: https://developer.bluetooth.org/gatt/services/Pages/ServicesHome.aspx
+
+   You can try it with these free mobile apps:
+
+   iPhone: http://appstore.com/ble-101
+   Android: http://play.google.com/store/apps/details?id=com.firstmakers.ble101
+
 */
 
-/*  */
+
 BLEPeripheral blePeripheral;       // BLE Peripheral Device (the board you're programming)
-//BLEService arduinoService("F000-0000-0451-4000-B000-000000000000"); // create service
 BLEService arduinoService("6fbee06f-b902-4ac1-bf99-8d4a9b76db8f"); // create service
 
 // BLE  Characteristics
@@ -181,17 +184,6 @@ void loop() {
             sendAnalogValue(i);
           }
         } 
-
-        /*
-        for (int i=0; i <= 13; i++){
-          if (haschangedDigital(i)) {
-            Serial.print("Changed digital: ");
-            Serial.println(i);
-            sendDigitalValue(i);
-          }
-        } 
-        */
-
 
       }
     }
