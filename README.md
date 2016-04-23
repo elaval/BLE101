@@ -13,6 +13,8 @@ Available for free on Andoid and iPhone
 
 [<img src="./images/appstore.jpg" width="150">](http://appstore.com/ble-101)
 
+_Note: When you try the App, make sure you have bluetooth enabled on the phone._
+
 ## Installing the skecth
 Arduino 101 looks very similar to arduino UNO, but it is a different boatrd and you can't install the sketches exactly as you would do with UNO.
 
