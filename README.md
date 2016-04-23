@@ -14,3 +14,10 @@ Available for free on Andoid and iPhone
 [<img src="./images/appstore.jpg" width="150">](http://appstore.com/ble-101)
 
 ## Installing the skecth
+Arduino 101 looks very similar to arduino UNO, but it is a different boatrd and you can't install the sketches exactly as you would do with UNO.
+
+1) You need Arduino IDE 1.6.7 (or later) - Downloadable from https://www.arduino.cc/en/Main/Software
+2) You need to connect using the 
+So, where do we start? First, plug your Arduino 101 board to your computer with a simple USB cable, then download Arduino IDE 1.6.7 https://www.arduino.cc/en/Main/Software and install the required board package with the board manager:
+
+So, where do we start? First, plug your Arduino 101 board to your computer with a simple USB cable, then download Arduino IDE 1.6.7 https://www.arduino.cc/en/Main/Software and install the required board package with the board manager:
