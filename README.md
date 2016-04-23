@@ -36,7 +36,7 @@ If you don't know how to download/clone this git repository, you can copy the sk
 
 https://raw.githubusercontent.com/elaval/BLE101/master/ble101/ble101.ino
 
-## Firstmakers Perfect Companion
+## Firstmakers: a good companion for Arduino/Genuino 101
 Arduino/Genuino 101 works perfect with shield Firstmakers (www.firstmakers.com) which allows to easily get data from built-in analog sensors and/or connect external modules with standard 3.5mm audio cables.
 
 <img src="./images/firstmakers.jpg" width="640">
