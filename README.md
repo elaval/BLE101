@@ -30,6 +30,12 @@ Arduino 101 looks very similar to arduino UNO, but it is a different boatrd and 
 And select board Arduino/Genuino 101 (Intel Curie Boards by Intel)
 <img src="./images/arduino3.png" width="640">
 
+4) Now you can open and upload the skecth included in this repository (ble101/ble101.ino).
+
+If you don't know how to download/clone this git repository, you can copy the sketch code from 
+
+https://raw.githubusercontent.com/elaval/BLE101/master/ble101/ble101.ino
+
 ## Firstmakers Perfect Companion
 Arduino/Genuino 101 works perfect with shield Firstmakers (www.firstmakers.com) which allows to easily get data from built-in analog sensors and/or connect external modules with standard 3.5mm audio cables.
 
