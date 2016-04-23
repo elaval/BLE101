@@ -8,6 +8,8 @@ It can be used with the example mobile App BLE 101
 
 
 Available for free on Andoid and iPhone
-[<img src="./images/googleplay.png" width="50">](http://play.google.com/store/apps/details?id=com.firstmakers.ble101)
-[<img src="./images/appstore.jpg" width="50">](http://appstore.com/ble-101)
+
+[<img src="./images/googleplay.png" width="150">](http://play.google.com/store/apps/details?id=com.firstmakers.ble101)
+
+[<img src="./images/appstore.jpg" width="150">](http://appstore.com/ble-101)
 
