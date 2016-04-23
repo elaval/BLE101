@@ -1,5 +1,5 @@
 # BLE101
-This is a Skecth for Arduino 101 (in USA) / Genuino 101 (out of USA) that allows communication through Bluetooth Low Energy (BLE) to monitor the values of analog pins and modify values of digital pins.
+This is a Skecth for Arduino 101 (USA) / Genuino 101 (other countries) that allows communication through Bluetooth Low Energy (BLE) to monitor the values of analog pins and modify values of digital pins.
 
 It can be used with the example mobile App BLE 101
 
