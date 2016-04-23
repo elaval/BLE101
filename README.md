@@ -17,7 +17,8 @@ Available for free on Andoid and iPhone
 Arduino 101 looks very similar to arduino UNO, but it is a different boatrd and you can't install the sketches exactly as you would do with UNO.
 
 1) You need Arduino IDE 1.6.7 (or later) - Downloadable from https://www.arduino.cc/en/Main/Software
-2) You need to connect using the 
+2) If you have it already installed, you must use the board 
+<img src="./images/arduino1.jpg" width="250">
 So, where do we start? First, plug your Arduino 101 board to your computer with a simple USB cable, then download Arduino IDE 1.6.7 https://www.arduino.cc/en/Main/Software and install the required board package with the board manager:
 
 So, where do we start? First, plug your Arduino 101 board to your computer with a simple USB cable, then download Arduino IDE 1.6.7 https://www.arduino.cc/en/Main/Software and install the required board package with the board manager:
