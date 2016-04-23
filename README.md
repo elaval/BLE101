@@ -11,7 +11,7 @@ Available for free on Andoid and iPhone
 
 [<img src="./images/googleplay.png" width="150">](http://play.google.com/store/apps/details?id=com.firstmakers.ble101)
 
-[<img src="./images/appstore.jpg" width="150">](http://appstore.com/ble-101)
+[<img src="./images/appstore.jpg" width="150">](https://itunes.apple.com/us/app/ble-101/id1104864060?mt=8)
 
 _Note: When you try the App, make sure you have bluetooth enabled on the phone._
 
